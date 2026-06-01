@@ -12,7 +12,7 @@ nav:
 
 theme:
   name: material
-  logo: ../img/Premier_Logo.png
+  logo: ../img/logo/Premier_Logo.png
   features:
     - navigation.footer
     - content.footnote.tooltips
