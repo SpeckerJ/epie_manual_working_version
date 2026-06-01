@@ -9,7 +9,7 @@ The ePiE app can be directly assessed via the button below:
 
 ## Legal Disclaimer
 
-After accessing the website, a legal disclaimer and a description of the privacy policy is presented. To use the web application, you are required to accept the terms. TEEEEEEEEEEEEST
+After accessing the website, a legal disclaimer and a description of the privacy policy is presented. To use the web application, you are required to accept the terms. Test1
 
 <br>
 <img src="../img/screenshots/screens_1.png" alt="img1" style="width: 100%; max-width: 600px; height: 50%;" />
