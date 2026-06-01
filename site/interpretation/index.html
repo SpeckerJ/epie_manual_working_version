@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#epies-model-parameters" class="md-skip">
+        <a href="#sources-of-uncertainties" class="md-skip">
           Skip to content
         </a>
       
@@ -389,6 +389,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#sources-of-uncertainties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources of Uncertainties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-foundation-of-the-model-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Foundation of the model: Input Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#epies-model-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -470,6 +492,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#sources-of-uncertainties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources of Uncertainties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-foundation-of-the-model-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Foundation of the model: Input Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#epies-model-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -508,13 +552,65 @@
 
 
 
+<h2 id="sources-of-uncertainties">Sources of Uncertainties</h2>
+<p>Predictions are, by their very nature, ripe with uncertainty. Especially predictions concerning the environmental due to the involved complexity. </p>
+<p>Predicting environmental concentrations relies on several key assumptions, which inherently introduce a certain level of uncertainty in the assessment. These uncertainties can be classified as fundamentanl or operational. While fundamental uncertainties are a consequence of the specific model assumptions, operational uncertainties are related to </p>
+<p>Idea: <em>"All models are wrong, but some are useful."</em> (George Box, British Statistican 1919 - 2013)</p>
+<h2 id="the-foundation-of-the-model-input-data">The Foundation of the model: Input Data</h2>
+<p>The predictions of the model are heavily influenced by the quality of the input data. The better and more comprehensive data is available used as input data, the better ePiE's predictions.
+First and foremost, this is esppecially true for the conspumption and sales data of APIs. It directly influences the overall amount that can potentiall be expected in the environment. Another critical factor at the start of the model is human metabolism and how much of the adminsitred API is excredted in its unchanged from. For APIs, where large fractions are excreted, this data can be less precises are small differences wont have such a big input, whereas for APIs with small fractions, data needs to be more precises.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consumption (kg/year)</td>
+<td>1000</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>True Fraction (%)</td>
+<td>90</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Wrong Fraction (%)</td>
+<td>85</td>
+<td>5</td>
+</tr>
+<tr>
+<td>True Load (kg/year)</td>
+<td>900</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Wrong Load (kg/year)</td>
+<td>850</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Absolute Error (kg/year)</td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Relative Error (%)</td>
+<td>5.6</td>
+<td>50.0</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Veterinary pharmaceuticals</li>
 <li>Changing hydrological systems / climate change</li>
 <li>RQs interpretation</li>
 </ul>
-<p>Predicting environmental concentrations relies on several key assumptions, which inherently introduce a certain level of uncertainty in the assessment.
-Often uniform API usage and excretion rates across populations are assumed, overlooking regional differences. Similarly, WWTPs processes are assumed to be largely similar, which may however not fully capture the operational variability between WWTPs. As such, specific removal rates for APIs can be different for individual WWTPs. Moreover, hydrological fluctuations are also to be expected, which can significantly influence environmental concentrations. During high flow events, dilution will play a much more influential factor as opposed to during low flow events. Moreover, during high-flow events, the possibility of sewer overflows increases which would lead to the untreated emissions of the sewer into the environment. 
+<p>Often uniform API usage and excretion rates across populations are assumed, overlooking regional differences. Similarly, WWTPs processes are assumed to be largely similar, which may however not fully capture the operational variability between WWTPs. As such, specific removal rates for APIs can be different for individual WWTPs. Moreover, hydrological fluctuations are also to be expected, which can significantly influence environmental concentrations. During high flow events, dilution will play a much more influential factor as opposed to during low flow events. Moreover, during high-flow events, the possibility of sewer overflows increases which would lead to the untreated emissions of the sewer into the environment. 
 Further uncertainties arise from potentially limited data availability on APIs. This could for example include limited sales data, making assessment of API usage difficult. Especially for APIs that are available as over the counter drugs (OTC) or only via prescription available sales data can be vastly different. Moreover, which APIs are available as OTC or via prescription only can differ between countries.
 Furthermore, the ePiE model itself introduces a certain level of uncertainty in the assessment of environmental concentration. This is due to specific model assumptions.. To reiterate these, ePiE only considers WWTP listed in the Environmental Protection Agencies database and is thus limited to WWTP connected to at least 2000 population equivalents. Hydrological scenarios  are based on average yearly flows between 2000 – 2015, and the spatially resolution is 1 km. This means that some WWTPs are not covered by ePiE, that future hydrological scenarios might not be comparable to the time window of 2000 – 2015, and that ePiE performs better for large river basins. 
 While the ePiE model provides valuable information on predicted environmental concentrations of APIs in surface waters, it is important to recognize that all models have inherent limitations and uncertainties. Consequently, predicting and interpreting environmental concentrations should be done with care and knowledge of potential uncertainties and how to address them. These limitations and sources of uncertainties will be discussed later at different sections, but the main focus of this manual is to provide the practical knowledge how to run the ePiE model. For further information, we refer to the PREMIER Guidance documents [REFERENCE]</p>
