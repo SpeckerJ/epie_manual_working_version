@@ -18,7 +18,7 @@ After accessing the website, a legal disclaimer and a description of the privacy
 After accepting, you will be guided to the ePiE starting page, which gives you a short description about the model, first use instructions how to operate the application, where to ask for questions, and a short section with acknowledgments. On the left side are multiple links to subsections of the model. Each subsection on the webpage comes with specific instructions and tables aiding the user in the process.  Start by clicking on “API properties” (1).
 
 <br>
-<img src="/img/screenshots/screens_2.png" alt="img2" style="width: 100%; max-width: 600px; height: 50%;" />
+<img src="img/screenshots/screens_2.png" alt="img2" style="width: 100%; max-width: 600px; height: 50%;" />
 <br>
 
 ## API Properties
