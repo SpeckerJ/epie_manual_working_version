@@ -1,0 +1,811 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ePiE_web/">
+      
+      
+        <link rel="next" href="../interpretation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>How to: The ePiE R package - ePiE Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installing-r-and-rstudio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
+      
+  <img src="../img/Premier_Logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ePiE Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to: The ePiE R package
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
+      
+  <img src="../img/Premier_Logo.png" alt="logo">
+
+    </a>
+    ePiE Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MkDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../purp_scope_manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Purpose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../b_information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theoretical Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ePiE_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to: The ePiE App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to: The ePiE R package
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to: The ePiE R package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#installing-r-and-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing R and RStudio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-epie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R ePiE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-epie-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the ePiE Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpretation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Interpretation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#installing-r-and-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing R and RStudio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-epie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R ePiE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-epie-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the ePiE Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>How to: The ePiE R package</h1>
+
+<pre><code class="language-r"># This is an example of R code
+data &lt;- read.csv("data.csv")
+summary(data)
+</code></pre>
+<h2 id="installing-r-and-rstudio">Installing R and RStudio</h2>
+<p><em>R</em> is a free, open-source programming language and software environment
+for statistical computing and graphics. While R is mandatory to have
+installed, RStudio is not. However, RStudio provides a user-friendly
+interface for <em>R</em>. It makes it easier to write, run, and debug R code,
+and it provides tools for visualizing data and managing projects. Please
+follow the steps below to install <em>R</em> and RStudio. This manual is not
+intended to provide users with a full instructions on how <em>R</em> works.
+Nevertheless, it will provide all necessary instructions to run ePiE in
+<em>R</em>, assuming limited knowledge of the programming language.</p>
+<p><strong>Step 1: Install R</strong></p>
+<ol>
+<li>
+<p>Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network
+    (CRAN)</a>.</p>
+</li>
+<li>
+<p>Click on the download link for your operating system (Windows,
+    macOS, or Linux).</p>
+</li>
+<li>
+<p>Run the installer and follow the on-screen instructions.</p>
+</li>
+</ol>
+<p><strong>Step 2: Install RStudio</strong></p>
+<ol>
+<li>
+<p>Go to the <a href="https://www.rstudio.com/products/rstudio/download/">RStudio download
+    page</a>.</p>
+</li>
+<li>
+<p>Download the free version of <strong>RStudio Desktop</strong>.</p>
+</li>
+<li>
+<p>Run the installer and follow the on-screen instructions.</p>
+</li>
+</ol>
+<h2 id="r-epie">R ePiE</h2>
+<p>Before running the ePiE model, you need to install some additional
+packages. These packages provide extra functionality for handling data,
+maps, and calculations. In the console panel, copy and paste the
+following code, then press Enter. The code will check if the required
+packages are installed. If not, it install them automatically.</p>
+<pre><code># # Install dependencies 
+# if(!require("Rcpp")) install.packages("Rcpp")      # For source code in C++
+# if(!require("terra")) install.packages("terra")     # For flow rasters
+# if(!require("sf")) install.packages("sf")          # For rivers and lakes
+# if(!require("mapview")) install.packages("mapview") # For interactive maps
+</code></pre>
+<p>The ePiE package is not yet available on CRAN. Accordingly, it needs to
+be installed directly from GitHub. Copy and paste the appropriate
+command for your operating system into the console and press Enter:</p>
+<pre><code># Windows
+# install.packages("https://github.com/SHoeks/ePiE/raw/refs/heads/main/Builds/ePiE_1.25.zip",
+#                  repos = NULL,
+#                  method = "libcurl")
+# # macOS
+# install.packages("https://github.com/SHoeks/ePiE/raw/refs/heads/main/Builds/ePiE_1.25.tgz",
+#                  repos = NULL,
+#                  method = "libcurl")
+# # Linux
+# install.packages("https://github.com/SHoeks/ePiE/raw/refs/heads/main/Builds/ePiE_1.25.tar.gz",
+#                  repos = NULL,
+#                  method = "libcurl")
+</code></pre>
+<p>Afterwards the ePiE package can be loaded with the following command:</p>
+<pre><code>library(ePiE)
+
+## ePiE version: 1.25
+
+# Open API-specific data
+chem = LoadExampleChemProperties()
+
+# View the contents of the chemical properties
+str(chem)
+
+## 'data.frame':    1 obs. of  23 variables:
+##  $ API                            : chr "Ibuprofen"
+##  $ CAS                            : chr "15687-27-1"
+##  $ class                          : chr "acid"
+##  $ MW                             : num 206
+##  $ KOW_n                          : num 9333
+##  $ Pv                             : num 0.0248
+##  $ S                              : num 21
+##  $ pKa                            : num 4.85
+##  $ f_u                            : num 0.2
+##  $ f_f                            : logi NA
+##  $ metab                          : logi NA
+##  $ API_metab                      : logi NA
+##  $ k_bio_wwtp_n                   : num 0.000197
+##  $ k_bio_wwtp_alt                 : num 0.000197
+##  $ custom_wwtp_primary_removal    : logi NA
+##  $ custom_wwtp_secondary_removal  : logi NA
+##  $ custom_wwtp_N_removal          : num 0
+##  $ custom_wwtp_P_removal          : num 0
+##  $ custom_wwtp_UV_removal         : num 0
+##  $ custom_wwtp_Cl_removal         : num 0
+##  $ custom_wwtp_O3_removal         : num 0
+##  $ custom_wwtp_sandfilter_removal : num 0
+##  $ custom_wwtp_microfilter_removal: num 0
+</code></pre>
+<h2 id="running-the-epie-model">Running the ePiE Model</h2>
+<p>Similar to the web application, the ePiE package includes example data
+for Ibuprofen. Again, we will use to this data to run the model. Copy
+and paste the following code into the console. It will load the chemical
+properties of ibuprofen and fills in any missing values automatically.
+These values are the same values as presented in the web application.</p>
+<pre><code>chem = LoadExampleChemProperties()
+chem = CompleteChemProperties(chem = chem)
+
+## [1] "WWTP primary and secondary removal rates evaluated with SimpleTreat 4.0 for Ibuprofen"
+</code></pre>
+<p>To estimate the removal fractions inside the WWTP, the SimpleTreat model
+is used. Copy and paste the following code into the console:</p>
+<pre><code>removal = SimpleTreat4_0(chem_class = chem$class[1], MW = chem$MW[1], Pv = chem$Pv[1], S = chem$S[1], pKa = chem$pKa[1], Kp_ps = chem$Kp_ps[1], Kp_as = chem$Kp_as[1], k_bio_WWTP = chem$k_bio_wwtp[1], T_air = 285, Wind = 4, Inh = 1000, E_rate = 1, PRIM = -1, SEC = -1)
+</code></pre>
+<p>Next we load the consumption data for ibuprofen with the code below.</p>
+<pre><code># Load example consumption data
+cons = LoadExampleConsumption()
+</code></pre>
+<p>Please note that for other compounds the respective data frame needs to
+contain exactly the same column names and structure as shown below. The
+str() function shows the structure of any arbitrary R object.  </p>
+<pre><code>str(cons)
+
+## 'data.frame':    51 obs. of  4 variables:
+##  $ cnt       : chr  "AD" "AL" "AM" "AT" ...
+##  $ population: num  76177 2862427 2965269 8858775 9981457 ...
+##  $ year      : num  2019 2019 2019 2019 2019 ...
+##  $ Ibuprofen : num  343 12881 13344 39864 44917 ...
+</code></pre>
+<p>Getting European river basins IDs can be achieved using the following
+code. With the ViewBasinsMap() function, an interactive map will open up
+that allows you to select individual basins similar to the web
+application.</p>
+<pre><code>basins = LoadEuropeanBasins()
+# ViewBasinMap()
+</code></pre>
+<p>To select individual basins, their id number needs to be attached to an
+object which will be used as input argument to actually select the
+specific river basins.</p>
+<pre><code>basin_ids = c(124863, 107287) # Rhine and Ouse
+basins = SelectBasins(basins_data = basins, basin_ids = basin_ids)
+</code></pre>
+<p>We need to ensure that the consumption data is available for the
+selected basins. This can be achieved with the following code</p>
+<pre><code>cons = CheckConsumptionData(basins$pts, chem, cons)
+</code></pre>
+<p>After checking the consumption data, we need to specify the flow
+conditions as specified below. Other options for the LoadLongTermFlow()
+function are “maximum” and “minimum”.</p>
+<pre><code>flow_avg = LoadLongTermFlow("average")
+
+## [1] "Loading average flow..."
+
+basins_avg = AddFlowToBasinData(basin_data = basins, flow_rast = flow_avg)
+</code></pre>
+<p>Now all required parameters have been specified and ePiE is able to
+predict the environmental concentrations. The code below runs the ePiE
+model and attaches it to an object called “results”.</p>
+<pre><code>results = ComputeEnvConcentrations(basin_data = basins_avg,
+                                    chem = chem,
+                                    cons = cons,
+                                    verbose = TRUE,
+cpp = TRUE)
+</code></pre>
+<p>Visualising the predicted concentrations can be achieved with the code
+below.</p>
+<pre><code># InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../ePiE_web/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to: The ePiE App">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                How to: The ePiE App
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../interpretation/" class="md-footer__link md-footer__link--next" aria-label="Next: Model Interpretation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Model Interpretation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Copyright 20XX PREMIER Consortium
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
