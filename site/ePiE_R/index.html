@@ -6,7 +6,7 @@
       
       
       
-        <link rel="prev" href="../ePiE_web/">
+        <link rel="prev" href="../ePiE_webapp/">
       
       
         <link rel="next" href="../interpretation/">
@@ -15,7 +15,7 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../img/logo/Premier_Logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -99,7 +99,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/Premier_Logo.png" alt="logo">
+  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -156,7 +156,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/Premier_Logo.png" alt="logo">
+  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
 
     </a>
     ePiE Manual
@@ -279,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ePiE_web/" class="md-nav__link">
+      <a href="../ePiE_webapp/" class="md-nav__link">
         
   
   
@@ -444,6 +444,33 @@
     
   
     Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PEPPER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PEPPER
   
 
     
@@ -706,6 +733,40 @@ cpp = TRUE)
 below.</p>
 <pre><code># InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
 </code></pre>
+<p>Next we want to calculate summary statistics for the predicted concentrations.</p>
+<pre><code class="language-R">PEC_summary_stats &lt;- result %&gt;%
+  group_by(API, basin_id, flow) %&gt;%
+  summarise(
+    mean_conc = mean(C_w, na.rm = TRUE),
+    perc5_conc = quantile(C_w, 0.05, na.rm = TRUE),
+    median_conc = median(C_w, na.rm = TRUE),
+    perc95_conc = quantile(C_w, 0.95, na.rm = TRUE),
+    mean_WWTP_conc = mean(C_w[Pt_type == "WWTP"], na.rm = TRUE),
+    median_WWTP_conc = median(C_w[Pt_type == "WWTP"], na.rm = TRUE)
+  )
+</code></pre>
+<p>To calculate risk quotients (RQs), the respective risk threshold value needs to be added to the data. Afterwards, the summary statistics for the RQs can be calculated as well as exemplary shown below.</p>
+<pre><code class="language-r">results$risk_threshold &lt;- 10
+RQ &lt;- results %&gt;% mutate(
+    RQ = C_w / risk_threshold
+)
+
+RQ_summary_stats &lt;- RQ %
+  group_by(API, basin_id, flow) %&gt;%
+  summarise(
+    abs_RQ_less_0.1 = sum(RQ &lt; 0.1, na.rm = TRUE),
+    abs_RQ_0.1_to_1 = sum(RQ &gt;= 0.1 &amp; RQ &lt;= 1.0, na.rm = TRUE),
+    abs_RQ_1_to_10 = sum(RQ &gt;= 1 &amp; RQ &lt;= 10, na.rm = TRUE),
+    abs_RQ_abv_10 = sum(RQ &gt;= 10, na.rm = TRUE),
+    tot.RQ = n(),
+    rel_RQ_less_0.1 = abs_RQ_less_0.1 / tot.RQ,
+    rel_RQ_0.1_to_1 = abs_RQ_0.1_to_1 / tot.RQ,
+    rel_RQ_1_to_10 = abs_RQ_1_to_10 / tot.RQ,
+    rel_RQ_abv_10 = abs_RQ_abv_10 / tot.RQ,
+    .groups = "keep"
+  ) %&gt;%
+  select(-matches("tot."))
+</code></pre>
 
 
 
@@ -735,7 +796,7 @@ below.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../ePiE_web/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to: The ePiE App">
+          <a href="../ePiE_webapp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to: The ePiE App">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -799,7 +860,7 @@ below.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

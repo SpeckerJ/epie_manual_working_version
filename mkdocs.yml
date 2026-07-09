@@ -5,17 +5,22 @@ nav:
   - MkDocs: MkDocs.md
   - Manual Purpose: purp_scope_manual.md
   - Theoretical Background: b_information.md
-  - 'How to: The ePiE App': ePiE_web.md
+  - 'How to: The ePiE App': ePiE_webapp.md
   - 'How to: The ePiE R package': ePiE_R.md
   - Model Interpretation: interpretation.md
+  - Use Examples: use_examples.md
   - Glossary: glossary.md
+  
+  
 
 theme:
   name: material
-  logo: ../img/logo/Premier_Logo.png
+  logo: ../img/logo/Premier_Logo.ico
+  favicon: ../img/logo/Premier_Logo.png # This is the tab icon
   features:
     - navigation.footer
     - content.footnote.tooltips
+    - content.code.copy
   
   palette:
     primary: white

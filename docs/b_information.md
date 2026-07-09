@@ -7,7 +7,10 @@ of Medicines in the EnviRonment) project.
 
 The ePiE model predicts concentration of APIs for human use in European rivers and waters based on consumption data of APIs, and API and environmental characteristics. It provides a broad-scale, steady-state assessment of PECs in European river basins and combines the need for a spatial explicit model, computational efficiency, and potential limited API data availability. 
 
-Schematically, this is shown in the figure below. ePiE uses as its basis a specific API's consumption and its human metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs are based on the European Environmental Agency database, which is limited to WWTP connected to at least 2000 population equivalents.
+Schematically, this is shown in the figure below. ePiE uses as its basis a specific API's consumption and its human metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs are based on the European Environmental Agency on the urban wastewater treatment directive (UWWTD) Waterbase database[^1], which is limited to WWTP connected to at least 2000 population equivalents.
+
+[^1]: [https://www.eea.europa.eu/en/datahub/datahubitem-view/6244937d-1c2c-47f5-bdf1-33ca01ff1715](https://www.eea.europa.eu/en/datahub/datahubitem-view/6244937d-1c2c-47f5-bdf1-33ca01ff1715)
+
 
 <br>
 <img src="/img/overview_epie2.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />

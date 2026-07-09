@@ -1,48 +1,86 @@
+# Model Interpretation
+
 ## Sources of Uncertainties
 
-Predictions are, by their very nature, ripe with uncertainty. Especially predictions concerning the environmental due to the involved complexity. 
 
-Predicting environmental concentrations relies on several key assumptions, which inherently introduce a certain level of uncertainty in the assessment. These uncertainties can be classified as fundamentanl or operational. While fundamental uncertainties are a consequence of the specific model assumptions, operational uncertainties are related to 
+Predictions are, by their very nature, ripe with uncertainty. As George Box famously stated, *"All models are wrong, but some are useful"*. This sentiment underscores that models cannot accurately reflect and cover all possibilities, but are still useful for gaining important observations, provided that the model limitations are known. This is especially true for models and predictions concerning the environment due to the involved complexity. 
+
+Predicting environmental concentrations relies on several key assumptions, which inherently introduce a certain level of uncertainty in the assessment. These uncertainties can be classified as fundamental or operational. While fundamental uncertainties are a consequence of the specific model assumptions, operational uncertainties relate to the specific uncertainties around individual input parameters. For example, a fundamental uncertainty of ePiE is that it is assumed that all WWTP perform the same, while the individual removal efficiency is an operational uncertainty. 
+
+Accordingly, the predictions of the model are heavily influenced by its assumptions and the quality of the input data, which are the foundation of the model. The better and more comprehensive data is available and used as input data, the better ePiE's predictions. Additional explanation surrounding these model assumptions and parameters is provided in the following sections to aid users in the proper interpretation and usage of the model results.
 
 
-Idea: *"All models are wrong, but some are useful."* (George Box, British Statistican 1919 - 2013)
+## API consumption data
+ 
+Driving the entire modelling process, is the quality of the API sales data. It directly influences the overall amount that can potentially be expected in the environment. However, the data availability for API sales and consumption may potentially be limited. This could for example include limited sales data, making the assessment of API usage difficult. Especially for APIs that are available as over the counter drugs (OTC) or only via prescription, available sales data can be vastly different. Moreover, which APIs are available as OTC or via prescription only can differ between countries, similar to where pharmaceuticals are sold and which sales data are collected. For further detailed information on these points and how to address these, we refer to the PREMIER guidance 4 (<mark>INSER LINK LATER<mark>).
+
+An additional uncertainty of ePiE is the assumed uniform API usage within a river basin. The assumption simplifies the model, but in reality API usage is spatial variable. For example, in population dense areas, more APIs will be consumed. Similarly, due to demographic differences, APIs API usage will vary for regions with an older population as these typically consumer more and a greater variety of APIs than the younger population.
 
 
-## The Foundation of the model: Input Data
 
-The predictions of the model are heavily influenced by the quality of the input data. The better and more comprehensive data is available used as input data, the better ePiE's predictions.
-First and foremost, this is esppecially true for the conspumption and sales data of APIs. It directly influences the overall amount that can potentiall be expected in the environment. Another critical factor at the start of the model is human metabolism and how much of the adminsitred API is excredted in its unchanged from. For APIs, where large fractions are excreted, this data can be less precises are small differences wont have such a big input, whereas for APIs with small fractions, data needs to be more precises.
+## Excreted API fraction
+
+Another critical factor for ePiE is human metabolism and how much of the administered API is excreted in its unchanged from (f_uf). For APIs, where large fractions are excreted, less precise data have less of an impact on the models results as for APIs where only small fractions are excreted. Exemplary, this is shown in the table below. For two APIs, A and B, with the same consumption, using wrong data for the excreted fraction, f_uf, results in a relative error of 5.6 % for API A with a high excretion fraction, compared to a 50 % error for API B with a low excretion fraction. 
+
 
   API | A | B |
  |-----|---|---|
  | Consumption (kg/year) | 1000 | 1000 |
- | True Fraction (%) | 90 | 10 |
- | Wrong Fraction (%) | 85 | 5 |
+ | True Fraction, f_uf (%) | 90 | 10 |
+ | Wrong Fraction, f_uf (%) | 85 | 5 |
  | True Load (kg/year) | 900 | 100 |
  | Wrong Load (kg/year) | 850 | 50 |
  | Absolute Error (kg/year) | 50 | 50 |
- | Relative Error (%) | 5.6 | 50.0 |
-
-- Veterinary pharmaceuticals
-- Changing hydrological systems / climate change
-- RQs interpretation
+ | Relative Error (%) | 5.6 | 50 |
 
 
+## API Physico-chemical parameters
 
-Often uniform API usage and excretion rates across populations are assumed, overlooking regional differences. Similarly, WWTPs processes are assumed to be largely similar, which may however not fully capture the operational variability between WWTPs. As such, specific removal rates for APIs can be different for individual WWTPs. Moreover, hydrological fluctuations are also to be expected, which can significantly influence environmental concentrations. During high flow events, dilution will play a much more influential factor as opposed to during low flow events. Moreover, during high-flow events, the possibility of sewer overflows increases which would lead to the untreated emissions of the sewer into the environment. 
-Further uncertainties arise from potentially limited data availability on APIs. This could for example include limited sales data, making assessment of API usage difficult. Especially for APIs that are available as over the counter drugs (OTC) or only via prescription available sales data can be vastly different. Moreover, which APIs are available as OTC or via prescription only can differ between countries.
-Furthermore, the ePiE model itself introduces a certain level of uncertainty in the assessment of environmental concentration. This is due to specific model assumptions.. To reiterate these, ePiE only considers WWTP listed in the Environmental Protection Agencies database and is thus limited to WWTP connected to at least 2000 population equivalents. Hydrological scenarios  are based on average yearly flows between 2000 – 2015, and the spatially resolution is 1 km. This means that some WWTPs are not covered by ePiE, that future hydrological scenarios might not be comparable to the time window of 2000 – 2015, and that ePiE performs better for large river basins. 
-While the ePiE model provides valuable information on predicted environmental concentrations of APIs in surface waters, it is important to recognize that all models have inherent limitations and uncertainties. Consequently, predicting and interpreting environmental concentrations should be done with care and knowledge of potential uncertainties and how to address them. These limitations and sources of uncertainties will be discussed later at different sections, but the main focus of this manual is to provide the practical knowledge how to run the ePiE model. For further information, we refer to the PREMIER Guidance documents [REFERENCE]
+Next to the API consumption and the excreted fraction f_uf, the individual physico-chemical parameter influence the model. These parameters are interdependent and uncertainty in any one of them can propagate through the model. Schematically, this is shown below for the parameters that can be directly changed in ePiE under the "API Properties" tab.
 
+The molecular weight (MW), vapour pressure (Vp), and solubility (S) are used by ePiE to predict the Henry’s law coefficient (K_A,W). The Henry coefficient describes the partitioning of chemicals between the air and water phase. Uncertainty in any of these input parameters directly affects the estimated volatilisation potential.
 
-## ePiEs model parameters
+For each API, the fraction of the neutral and ionized forms is calculated and for each form individual partitioning coefficients are used. When these values are not known, these are again modelled. K_OW and pKa predict the Kp,DOC, and K_OW furthermore predicts the K_OC. K_OC in turn is used to derive the Kp_ps, Kp_as, Kp_susp, and the Kp_sd. This shows, that K_OW has a potential significant influence on the model if it is used to predict other values. 
 
-<img src="/img/draft_flowchart.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
+Accordingly, it is important to be aware of the quality of the input parameters used and if modelled or experimental values are used in the modelling process.
+
+<img src="/img/flowchart_hierarchy.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
 <figcaption>Figure X: Dummy caption</figcaption>
 
-# Comments
+## WWTP & hdyrological scenarios
+
+Emission points into the aquatic environment are considered to be only WWTPs and agglomerations that are not connected to the sewer systems. Accordingly, this means that upstream of WWTPs without another WWTP, no predictions are made. However, this does not accurately reflect environmental reality. Chemicals can move through environmental compartments via various transport processes and can still be present upstream of WWTPs without another connected WWWTP.
+
+Moreover, ePiE assumes uniform WWTP treatment performance, overlooking regional differences. Accordingly, the model does not fully capture the operational variability between WWTPs. As such, specific removal rates for APIs can be different for individual WWTPs.
+
+Moreover, hydrological fluctuations are also to be expected, which can significantly influence environmental concentrations. During high flow events, dilution will play a much more influential factor as opposed to during low flow events. Moreover, during high-flow events, the possibility of sewer overflows increases, which would lead to the untreated emissions of the sewer into the environment.  
+
+Furthermore, the model structure of ePiE to only include WWTPs connected to 2000 population equivalents, hydrological scnearios 
+
+Additional uncertainty is introduced by the following model's limitations: only WWTP serving at least 2000 population equivalents are covered, the basis for the hydrological scenarios are the years 2000 - 2015, and a spatial resolution of 1 km. This means that smaller WWTPs and their discharges are not covered by ePiE, that future changing hydrological scenarios might not be comparable to the time window of 2000 – 2015, and that ePiE performs better for large river basins. 
+
+## Risk Interpretation
+
+Several factors need to be considered when interpreting the calculated risk quotient.
+First of all, the quality of the applied risk threshold value is hugely influential. If possible, established environmental quality standards (EQS) should be used for the assessment. Such quality standards are legally binding and based on standardised test guidelines. However, in case of an API without such established values using other data sources, or in special cases where the EQS is only based on a limited number of tests, the calculated risk quotient should be interpreted with care. 
+
+Furthermore, ePiE is timely constrained and calculates only one PEC and accordingly only one RQ. Timely variations in environmental concentration are however to be expected which can be due to changes in API usage, API treatment regime, WWTP treatment train changes or upgrades, or hydrological changes.
+
+In the example below for ibuprofen, using an EQS of 140 ng/L[^1] and an average EU consumption of 8.6 mg per capita in 2019[^2], for an average hydrological flow in the Rhine basin, we can see that risks are genereally acceptable with the majority of values <0.1. However, a substantial fraction of 40 % lies between 0.1 and 1, and almost 8 % between 1 and 10, and a small, but important fraction above 10. These high RQs indicate specific locations or conditions in the river basin where risks for the environment are likely. Moreover, it is important to keep in mind that in reality organisms in the environment are exposed to mixtures of APIs. In this instances, locations with RQ betweens 0.1 - 1 could still be problematic as all chemicals contribute to the overall effect.
 
 
+| **API  (ID)** | **Basin (ID)** | **Risk Quotient < 0.1** | **Risk Quotient 0.1 - 1.0** | **Risk Quotient 1.0 - 10** | **Risk Quotient > 10** |
+|:--------------:|:-----------------:|:-----------------------:|:---------------------------:|:--------------------------:|:----------------------:|
+|   Ibuprofen   |     124863     |          51.98%         |            40.4%            |            7.42%           |          0.2%          |
 
-[comment]: <> (Model uncertainties. Mention later)
-One of the most influential points in the environmental risk assessment of APIs is related to production and consumption of APIs. Exact quantities for the production of APIs might be known for individual countries for well-known pharmaceuticals, less so for highly specific drugs or newly introduced products on the market. Additionally, not all pharmaceuticals that are sold are consumed, which further complicates the assessment. Accordingly, the availability of precise data on production, sales, and actual consumption is therefore critical, as this information significantly contribute to the overall uncertainty in the assessment. 
+
+Such specific cases, with a small fraction exceeding the RQ threshold, should also be considered under the perspective of changing hydrological regimens. Below, the data for ibuprofen are presented, including next to the average flow also the maximum and minimum. It becomes apparent that the fraction of RQs exceeding 1 is increasing substantially under low flow conditions. Selecting the proper scenario for a specific time window is therefore key to deriving appropriate RQs. However, as aforementioned, the underlying hydrological data may not fully capture future scenarios.
+
+[^1]: Proposed EQS in the WFD recast. To do: Add link and double check the proposal
+[^2]: Cannata et al. 2024. To do: Add citation
+
+| **API  (ID)** | **Basin (ID)** | Hydrological Flow | **Risk Quotient < 0.1** | **Risk Quotient 0.1 - 1.0** | **Risk Quotient 1.0 - 10** | **Risk Quotient > 10** |
+|:-------------:|:--------------:|:-----------------:|:-----------------------:|:---------------------------:|:--------------------------:|:----------------------:|
+|   Ibuprofen   |     124863     |      Maximum      |          65.6%          |            32.79%           |            1.55%           |          0.06%         |
+|   Ibuprofen   |     124863     |      Average      |          51.98%         |            40.4%            |            7.42%           |          0.2%          |
+|   Ibuprofen   |     124863     |      Minimum      |           42%           |            28.43%           |           27.69%           |          1.87%         |
