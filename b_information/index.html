@@ -9,13 +9,13 @@
         <link rel="prev" href="../purp_scope_manual/">
       
       
-        <link rel="next" href="../ePiE_web/">
+        <link rel="next" href="../ePiE_webapp/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../img/logo/epie_manual_logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -99,7 +99,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/logo/Premier_Logo.png" alt="logo">
+  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -156,7 +156,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/logo/Premier_Logo.png" alt="logo">
+  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
 
     </a>
     ePiE Manual
@@ -359,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ePiE_web/" class="md-nav__link">
+      <a href="../ePiE_webapp/" class="md-nav__link">
         
   
   
@@ -421,6 +421,33 @@
     
   
     Model Interpretation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use_examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Examples
   
 
     
@@ -541,7 +568,7 @@
 <p>The first version of the ePiE model was developed in 2018 by Oldenkamp et al. (2018) (<mark><strong>CITATION</strong></mark>) as part of the IMI's iPiE (Innovative Medicines Initiative; Intelligence-led Assessment of Pharmaceuticals in the Environment) project and was subsequently further developed as part of the PREMIER (Prioritisation and Risk Evaluation
 of Medicines in the EnviRonment) project.</p>
 <p>The ePiE model predicts concentration of APIs for human use in European rivers and waters based on consumption data of APIs, and API and environmental characteristics. It provides a broad-scale, steady-state assessment of PECs in European river basins and combines the need for a spatial explicit model, computational efficiency, and potential limited API data availability. </p>
-<p>Schematically, this is shown in the figure below. ePiE uses as its basis a specific API's consumption and its human metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs are based on the European Environmental Agency database, which is limited to WWTP connected to at least 2000 population equivalents.</p>
+<p>Schematically, this is shown in the figure below. ePiE uses as its basis a specific API's consumption and its human metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs are based on the European Environmental Agency on the urban wastewater treatment directive (UWWTD) Waterbase database<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, which is limited to WWTP connected to at least 2000 population equivalents.</p>
 <p><br>
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/img/overview_epie2.png" data-desc-position="bottom"><img src="/img/overview_epie2.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;"></a></p>
 <figcaption>Figure X: Dummy caption.</figcaption>
@@ -560,7 +587,7 @@ While this manual does not aim to provide an exhaustive explanation of all these
 <p>Once APIs reach the aquatic environment, they can still have detrimental effects on aquatic organisms and may even end up in drinking water sources, warranting their proper management in a given river basin to protect human and environmental health.
 Numerous degradation processes affect APIs in surface waters such as photodegradation, biodegradation, hydrolysis, and sorption. </p>
 <p>Sorption includes two similar, but distinctive processes: adsorption and absorptions. Adsorption describes the transfer from the water or gaseous phase to the solid phase. For example, the attachment of dissolved APIs to the surface of organic particles such as suspended solid particles in the water column or the sediment. In contrast, absorption describes the uptake or retention of a dissolved compound by another compound, material, or organism. For example, APIs that are taken up by aquatic plants from the water phase.</p>
-<p>Organisms play another pivotal role in governing the fate of APIs in the environment as they can biodegrade APIs. However, as mentioned above, APIs can also be taken up by an organisms, also referred to as bioaccumulation<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. If such organisms serve as prey, APIs can be transported up the food chain to higher trophic levels, also referred to as biomagnification.</p>
+<p>Organisms play another pivotal role in governing the fate of APIs in the environment as they can biodegrade APIs. However, as mentioned above, APIs can also be taken up by an organisms, also referred to as bioaccumulation. If such organisms serve as prey, APIs can be transported up the food chain to higher trophic levels, also referred to as biomagnification.</p>
 <p>Photodegradation occurs either directly, when APIs degrades upon absorbing, or indirectly, when an API is degraded by radicals or other intermediates that were generated by sunlight. 
 Hydrolysis refers to the process by which a compound reacts with a water molecule, leading to its degradation.</p>
 <p>These degradation processes are in turn influenced by multiple abiotic and biotic factors. These include the pH, temperature, radiation intensity, redox conditions, microbial communities, or for example the organic matter content. Furthermore, the individual physico-chemical properties of the specific API influence these fate processes as well. For example, the acid dissociation constant pK<sub>A</sub> of a specific API in combination with the environmental pH will dictate the API's ionisation state which in turn is a decisive factor for an APIs solubility and mobility.</p>
@@ -568,7 +595,7 @@ Hydrolysis refers to the process by which a compound reacts with a water molecul
 <hr>
 <ol>
 <li id="fn:1">
-<p>Strictly speaking, bioaccumulation refers to the uptake of <em>xenobiotics</em> (This is mainly a test for me to see how to implement footnotes).&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://www.eea.europa.eu/en/datahub/datahubitem-view/6244937d-1c2c-47f5-bdf1-33ca01ff1715">https://www.eea.europa.eu/en/datahub/datahubitem-view/6244937d-1c2c-47f5-bdf1-33ca01ff1715</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -618,7 +645,7 @@ Hydrolysis refers to the process by which a compound reacts with a water molecul
         
         
           
-          <a href="../ePiE_web/" class="md-footer__link md-footer__link--next" aria-label="Next: How to: The ePiE App">
+          <a href="../ePiE_webapp/" class="md-footer__link md-footer__link--next" aria-label="Next: How to: The ePiE App">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -665,7 +692,7 @@ Hydrolysis refers to the process by which a compound reacts with a water molecul
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
