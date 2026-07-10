@@ -2,7 +2,6 @@ site_name: ePiE Manual
 
 nav:
   - Home: index.md
-  - MkDocs: MkDocs.md
   - Manual Purpose: purp_scope_manual.md
   - Theoretical Background: b_information.md
   - 'How to: The ePiE App': ePiE_webapp.md
