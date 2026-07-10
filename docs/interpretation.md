@@ -44,7 +44,7 @@ For each API, the fraction of the neutral and ionized forms is calculated and fo
 
 Accordingly, it is important to be aware of the quality of the input parameters used and if modelled or experimental values are used in the modelling process.
 
-<img src="/img/flowchart_hierarchy.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
+<img src="../img/flowchart_hierarchy.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
 <figcaption>Figure X: Dummy caption</figcaption>
 
 ## WWTP & hdyrological scenarios

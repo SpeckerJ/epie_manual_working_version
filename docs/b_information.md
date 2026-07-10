@@ -13,7 +13,7 @@ Schematically, this is shown in the figure below. ePiE uses as its basis a speci
 
 
 <br>
-<img src="/img/overview_epie2.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
+<img src="../img/overview_epie2.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
 <figcaption>Figure X: Dummy caption.</figcaption>
 <br>
 
@@ -28,7 +28,7 @@ Based on intensive validation, ePiE was found to provide an accuracy between mea
 APIs can enter the environment via multiple direct and indirect entry routes (see Figure below). Direct entry routes stem from human excretion after their administration. After consumption, APIs are metabolised in the human body, but fractions are also excreted unchanged or as active metabolites via urine and faeces. These end up in the sewer system and travel through the sewage system towards WWTPs. While conventional WWTPs are effective at removing many pollutants from the wastewater, they were not specifically designed to remove anthropogenic chemicals such as pharmaceuticals. Inside the WWTP numerous processes govern the degradation and removal of chemicals. Some are partially degraded through biological processes or removed through sorption to sludge, while others persist and pass through treatment largely unchanged. Consequently, treated wastewater effluent still contains measurable concentrations of APIs, ultimately ending up in receiving surface waters. 
 
 
-<img src="/img/draft_overview_API_entry_20260415.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: 50%;" />
+<img src="../img/draft_overview_API_entry_20260415.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: 50%;" />
 <figcaption>Figure X: Dummy caption.</figcaption>
 <br>
 
