@@ -6,19 +6,21 @@
       
       
       
-        <link rel="prev" href="../glossary/">
+        <link rel="prev" href="../interpretation/">
       
+      
+        <link rel="next" href="../glossary/">
       
       
         
       
       
-      <link rel="icon" href="../../img/logo/Premier_Logo.png">
+      <link rel="icon" href="../../img/logo/epie_manual_logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>PEPPER - ePiE Manual</title>
+        <title>Use Examples - ePiE Manual</title>
       
     
     
@@ -79,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-pepper-model" class="md-skip">
+        <a href="#run-the-model-yourself" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PEPPER
+              Use Examples
             
           </span>
         </div>
@@ -355,33 +357,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Glossary
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -399,7 +374,7 @@
   <span class="md-ellipsis">
     
   
-    PEPPER
+    Use Examples
   
 
     
@@ -417,7 +392,7 @@
   <span class="md-ellipsis">
     
   
-    PEPPER
+    Use Examples
   
 
     
@@ -441,6 +416,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#run-the-model-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the model yourself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-pepper-model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -455,6 +441,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -484,6 +497,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#run-the-model-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the model yourself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-pepper-model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -511,8 +535,33 @@
 
 
 
-  <h1>PEPPER</h1>
+  <h1>Use Examples</h1>
 
+<h2 id="run-the-model-yourself">Run the model yourself</h2>
+<ul>
+<li>Atenolol: </li>
+<li>Metoprolol:</li>
+<li>
+<p>Gabapentin:</p>
+</li>
+<li>
+<p>Please collect MW, Vp, and S from Pubchem</p>
+</li>
+<li>Metoprolol, Gabapentin, Atenolol, PREMIER DAS: pKA, Log P</li>
+<li>Koc from Chemspider or comptox. Remember to take the logarithmic value</li>
+<li>f_uf = Drugbank</li>
+<li>Provide ATC, CAS, and SMILES. Average consumption for the year 2019</li>
+<li>Note down where the data is coming from in an individual data file</li>
+<li>Fill in the data template for ePiE</li>
+<li>
+<p>Run ePiE for your desired river basin under average scenarios</p>
+</li>
+<li>
+<p>Questions: Do the predicted concentrations make sense? How would you assess if the model results are realistic?</p>
+</li>
+<li>In which order would you priortise these APIs, not knowing their potential RQs?</li>
+<li>Under the assumption that you do not have any available effect data, how could you further assess their potential environmental risks? Read across or check their hazard properties for PBT or PMT, or vPvM. River basin specific, if there is a drinking water production area, these APIs might carry risks for consumers. However, as these APIs are administered at much higher, safer doses, such acute risks are unlikely. However, chronic risks would be an issue. Monitor the situation</li>
+</ul>
 <h2 id="the-pepper-model">The PEPPER model</h2>
 <p>ePiE stands out for its high degree of customizability. Most parameters can be overwritten, allowing users to use experimental data or other models such as PEPPER (Predict Environmental Pollutant PERsistence).</p>
 <p>The PEPPER model was developed using large-scale monitoring data from WWTP applying secondary treatment with activated sludge and covers over 1000 chemicals applying a random-forest model to predict the WWTP breakthrough of anthropogenic chemicals. These predictions are based on the chemical structure alone and also allow to asses their half-life in soil. PEPPER is freely accessible as a web application via the following <a href="https://pepper-app.streamlit.app/">link</a>. More information on the PEPPER model can be found under the web application or in its respective publication by <a href="https://pubs.acs.org/doi/full/10.1021/acs.est.5c09314">Cordero Solano et al. (2025)</a>.</p>
@@ -568,7 +617,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../glossary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Glossary">
+          <a href="../interpretation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Model Interpretation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -578,11 +627,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Glossary
+                Model Interpretation
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
         
       </nav>
     

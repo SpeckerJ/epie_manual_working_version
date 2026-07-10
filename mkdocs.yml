@@ -16,7 +16,7 @@ nav:
 theme:
   name: material
   logo: ../img/logo/Premier_Logo.ico
-  favicon: ../img/logo/Premier_Logo.png # This is the tab icon
+  favicon: ../img/logo/epie_manual_logo.png # This is the tab icon
   features:
     - navigation.footer
     - content.footnote.tooltips

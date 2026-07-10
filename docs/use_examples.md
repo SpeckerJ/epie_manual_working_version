@@ -1,3 +1,22 @@
+## Run the model yourself 
+
+- Atenolol: 
+- Metoprolol:
+- Gabapentin:
+
+- Please collect MW, Vp, and S from Pubchem
+- Metoprolol, Gabapentin, Atenolol, PREMIER DAS: pKA, Log P
+- Koc from Chemspider or comptox. Remember to take the logarithmic value
+- f_uf = Drugbank
+- Provide ATC, CAS, and SMILES. Average consumption for the year 2019
+- Note down where the data is coming from in an individual data file
+- Fill in the data template for ePiE
+- Run ePiE for your desired river basin under average scenarios
+
+- Questions: Do the predicted concentrations make sense? How would you assess if the model results are realistic?
+- In which order would you priortise these APIs, not knowing their potential RQs?
+- Under the assumption that you do not have any available effect data, how could you further assess their potential environmental risks? Read across or check their hazard properties for PBT or PMT, or vPvM. River basin specific, if there is a drinking water production area, these APIs might carry risks for consumers. However, as these APIs are administered at much higher, safer doses, such acute risks are unlikely. However, chronic risks would be an issue. Monitor the situation
+
 ## The PEPPER model
 
 ePiE stands out for its high degree of customizability. Most parameters can be overwritten, allowing users to use experimental data or other models such as PEPPER (Predict Environmental Pollutant PERsistence).

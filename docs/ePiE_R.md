@@ -220,6 +220,9 @@ model and attaches it to an object called “results”.
     cpp = TRUE)
 ```
 
+- Show here also the output of the file and mention what the individual columns mean
+    - X, Y- coordinates, the flow, Concentration water and sediment (not validated)
+
 ## Map results 
 
 Visualising the predicted concentrations can be achieved with the code
