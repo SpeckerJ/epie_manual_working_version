@@ -12,7 +12,7 @@ Accordingly, the predictions of the model are heavily influenced by its assumpti
 
 ## API consumption data
  
-Driving the entire modelling process, is the quality of the API sales data. It directly influences the overall amount that can potentially be expected in the environment. However, the data availability for API sales and consumption may potentially be limited. This could for example include limited sales data, making the assessment of API usage difficult. Especially for APIs that are available as over the counter drugs (OTC) or only via prescription, available sales data can be vastly different. Moreover, which APIs are available as OTC or via prescription only can differ between countries, similar to where pharmaceuticals are sold and which sales data are collected. For further detailed information on these points and how to address these, we refer to the PREMIER guidance 4 (<mark>INSER LINK LATER<mark>).
+Driving the entire modelling process, is the quality of the API sales data. It directly influences the overall amount that can potentially be expected in the environment. However, the data availability for API sales and consumption may potentially be limited. This could for example include limited sales data, making the assessment of API usage difficult. Especially for APIs that are available as over the counter drugs (OTC) or only via prescription, available sales data can be vastly different. Moreover, which APIs are available as OTC or via prescription only can differ between countries, similar to where pharmaceuticals are sold and which sales data are collected. For further detailed information on these points and how to address these, we refer to the PREMIER guidance 4 (<mark>INSERT LINK LATER<mark>).
 
 An additional uncertainty of ePiE is the assumed uniform API usage within a river basin. The assumption simplifies the model, but in reality API usage is spatial variable. For example, in population dense areas, more APIs will be consumed. Similarly, due to demographic differences, APIs API usage will vary for regions with an older population as these typically consumer more and a greater variety of APIs than the younger population.
 
@@ -47,15 +47,13 @@ Accordingly, it is important to be aware of the quality of the input parameters 
 <img src="../img/flowchart_hierarchy.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;" />
 <figcaption>Figure X: Dummy caption</figcaption>
 
-## WWTP & hdyrological scenarios
+## WWTP & hydrological scenarios
 
 Emission points into the aquatic environment are considered to be only WWTPs and agglomerations that are not connected to the sewer systems. Accordingly, this means that upstream of WWTPs without another WWTP, no predictions are made. However, this does not accurately reflect environmental reality. Chemicals can move through environmental compartments via various transport processes and can still be present upstream of WWTPs without another connected WWWTP.
 
 Moreover, ePiE assumes uniform WWTP treatment performance, overlooking regional differences. Accordingly, the model does not fully capture the operational variability between WWTPs. As such, specific removal rates for APIs can be different for individual WWTPs.
 
 Moreover, hydrological fluctuations are also to be expected, which can significantly influence environmental concentrations. During high flow events, dilution will play a much more influential factor as opposed to during low flow events. Moreover, during high-flow events, the possibility of sewer overflows increases, which would lead to the untreated emissions of the sewer into the environment.  
-
-Furthermore, the model structure of ePiE to only include WWTPs connected to 2000 population equivalents, hydrological scnearios 
 
 Additional uncertainty is introduced by the following model's limitations: only WWTP serving at least 2000 population equivalents are covered, the basis for the hydrological scenarios are the years 2000 - 2015, and a spatial resolution of 1 km. This means that smaller WWTPs and their discharges are not covered by ePiE, that future changing hydrological scenarios might not be comparable to the time window of 2000 – 2015, and that ePiE performs better for large river basins. 
 
@@ -66,7 +64,7 @@ First of all, the quality of the applied risk threshold value is hugely influent
 
 Furthermore, ePiE is timely constrained and calculates only one PEC and accordingly only one RQ. Timely variations in environmental concentration are however to be expected which can be due to changes in API usage, API treatment regime, WWTP treatment train changes or upgrades, or hydrological changes.
 
-In the example below for ibuprofen, using an EQS of 140 ng/L[^1] and an average EU consumption of 8.6 mg per capita in 2019[^2], for an average hydrological flow in the Rhine basin, we can see that risks are genereally acceptable with the majority of values <0.1. However, a substantial fraction of 40 % lies between 0.1 and 1, and almost 8 % between 1 and 10, and a small, but important fraction above 10. These high RQs indicate specific locations or conditions in the river basin where risks for the environment are likely. Moreover, it is important to keep in mind that in reality organisms in the environment are exposed to mixtures of APIs. In this instances, locations with RQ betweens 0.1 - 1 could still be problematic as all chemicals contribute to the overall effect.
+In the example below for ibuprofen, using an EQS of 140 ng/L[^1] and an average EU consumption of 8.6 mg per capita in 2019[^2], for an average hydrological flow in the Rhine basin, we can see that risks are generally acceptable with the majority of values <0.1. However, a substantial fraction of 40 % lies between 0.1 and 1, and almost 8 % between 1 and 10, and a small, but important fraction above 10. These high RQs indicate specific locations or conditions in the river basin where risks for the environment are likely. Moreover, it is important to keep in mind that in reality organisms in the environment are exposed to mixtures of APIs. In this instances, locations with RQ betweens 0.1 - 1 could still be problematic as all chemicals contribute to the overall effect.
 
 
 | **API  (ID)** | **Basin (ID)** | **Risk Quotient < 0.1** | **Risk Quotient 0.1 - 1.0** | **Risk Quotient 1.0 - 10** | **Risk Quotient > 10** |

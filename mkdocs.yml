@@ -4,8 +4,8 @@ nav:
   - Home: index.md
   - Manual Purpose: purp_scope_manual.md
   - Theoretical Background: b_information.md
-  - 'How to: The ePiE App': ePiE_webapp.md
-  - 'How to: The ePiE R package': ePiE_R.md
+  - 'How to: The ePiE App': how_to_webapp.md
+  - 'How to: The ePiE <i>R</i> package': how_to_R.md
   - Model Interpretation: interpretation.md
   - Glossary: glossary.md
   
@@ -14,7 +14,7 @@ nav:
 theme:
   name: material
   logo: ../img/logo/Premier_Logo.ico
-  favicon: ../img/logo/epie_manual_logo.png # This is the tab icon
+  favicon: ../img/logo/epie_manual_logo_V4.ico # This is the tab icon
   features:
     - navigation.footer
     - content.footnote.tooltips
@@ -33,4 +33,4 @@ extra_css:
 plugins:
   - glightbox:
 
-copyright: © Copyright 20XX PREMIER Consortium
+copyright: © Copyright 2026 PREMIER Consortium
