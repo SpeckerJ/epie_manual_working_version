@@ -9,7 +9,7 @@
         <link rel="prev" href="../how_to_webapp/">
       
       
-        <link rel="next" href="../interpretation/">
+        <link rel="next" href="../advanced_R/">
       
       
         
@@ -481,6 +481,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../advanced_R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced <i>R</i> Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../interpretation/" class="md-nav__link">
         
   
@@ -704,15 +731,7 @@
   <h1>How to: The ePiE <i>R</i> package</h1>
 
 <h2 id="installing-r-and-rstudio">Installing <em>R</em> and RStudio</h2>
-<p><em>R</em> is a free, open-source programming language and software environment
-for statistical computing and graphics. While R is mandatory to have
-installed, RStudio is not. However, RStudio provides a user-friendly
-interface for <em>R</em>. It makes it easier to write, run, and debug <em>R</em> code,
-and it provides tools for visualizing data and managing projects. Please
-follow the steps below to install <em>R</em> and RStudio. A more extensive example is provided under the following <a href="https://r4np.com/03_setting_up_r_rstudio.html">link</a>.</p>
-<p>This manual is not intended to provide users with a full instructions on how <em>R</em> works.
-Nevertheless, it will provide all necessary instructions to run ePiE in
-<em>R</em>, assuming limited knowledge of the programming language.</p>
+<p><em>R</em> is a free, open-source programming language and software environment for statistical computing and graphics. In order to run the ePiE package, it is mandatory to have <em>R</em> installed. Installation of RStudio is not mandatory. However, RStudio provides a user-friendly interface for <em>R</em>. It makes it easier to write, run, and debug <em>R</em> code, and it provides tools for visualizing data and managing projects. Please follow the steps below to install <em>R</em> and RStudio. This manual is not intended to provide users with a full instructions on how <em>R</em> works. Nevertheless, it will provide all necessary instructions to run ePiE in <em>R</em>, assuming limited knowledge of the programming language.</p>
 <p><strong>Step 1: Install <em>R</em></strong></p>
 <ol>
 <li>
@@ -748,8 +767,8 @@ Nevertheless, it will provide all necessary instructions to run ePiE in
 <p>RStudio is divided into four main panels:</p>
 <ul>
 <li><strong>Source</strong> (top-left, 1): Write and save your R scripts here</li>
-<li><strong>Console</strong> (bottom-left, 2): Executes R code and displays output; commands can be typed directly or run from the Source panel</li>
-<li><strong>Environment</strong> (top-right, 3): Lists all objects currently loaded in memory (data frames, variables, functions)</li>
+<li><strong>Environment</strong> (top-right, 2): Lists all objects currently loaded in memory (data frames, variables, functions)</li>
+<li><strong>Console</strong> (bottom-left, 3): Executes R code and displays output; commands can be typed directly or run from the Source panel</li>
 <li><strong>Files / Plots / Help</strong> (bottom-right, 4): Browse files, view plots, active packages, and access R documentation</li>
 </ul>
 <p>It is <strong><em>strongly</em></strong> recommended to work inside an <strong>RRoject</strong>. The advantage of working within an RProjects is that the working directory is automatically set to the project folder, making all file paths relative and reproducible across different machines. Furthermore, all related raw data and generated data can be stored inside the project folder. For more information, please refer to the following references:</p>
@@ -790,8 +809,8 @@ Nevertheless, it will provide all necessary instructions to run ePiE in
 </tr>
 <tr>
 <td>Find and replace</td>
-<td><code>Ctrl + H</code></td>
-<td><code>Cmd + H</code></td>
+<td><code>Ctrl + F</code></td>
+<td><code>Cmd + H???</code></td>
 </tr>
 <tr>
 <td>Knit / render document</td>
@@ -806,7 +825,7 @@ Nevertheless, it will provide all necessary instructions to run ePiE in
 packages. These packages provide extra functionality for handling data,
 maps, and calculations. In the console panel, copy and paste the
 following code, then press Enter. The code will check if the required
-packages are installed. If not, it install them automatically.</p>
+packages are installed. If not, the packages will be installed automatically.</p>
 <pre><code class="language-R"> # Install dependencies 
  if(!require("Rcpp")) install.packages("Rcpp")       # For source code in C++
  if(!require("terra")) install.packages("terra")     # For flow rasters
@@ -866,7 +885,7 @@ str(chem)
 #  $ custom_wwtp_sandfilter_removal : num 0
 #  $ custom_wwtp_microfilter_removal: num 0
 </code></pre>
-<p>To load in data for a different desired API, a custom data file in any <em>R</em> readable format can be used (e.g., .csv, .xlsx). The template on the ePiE webapp can be used for this purpose; it is also included below as an .xlsx or .csv file.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">1</a></sup></p>
+<p>To load in data for a different desired API, a custom data file in any <em>R</em> readable format can be used (e.g., .csv, .xlsx). The template of the ePiE webapp can be used for this purpose; it is also included below as an .xlsx or .csv file.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">1</a></sup></p>
 <p><a class="md-button" download="ePiE_R_API_template_CSV" href="Template CSV">Template CSV; FILE NOT INCLUDED YET</a>
 <a class="md-button" download="ePiE_R_API_template_XLSX" href="Template XLSX">Template XLSX; FILE NOT INCLUDED YET</a></p>
 <pre><code class="language-R">df_metoprolol &lt;- read.csv("DATA_FILE.csv", header = TRUE, sep = ";") # .csv
@@ -921,17 +940,18 @@ contain exactly the same column names and data type (i.e character <code>chr</co
 </code></pre>
 <p>We need to ensure that the consumption data is available for the
 selected basins. This can be achieved with the following code</p>
-<pre><code class="language-R">    cons = CheckConsumptionData(basins$pts, chem, cons)
+<pre><code class="language-R">cons = CheckConsumptionData(basins$pts, chem, cons)
 </code></pre>
 <h2 id="run-epie">Run ePiE</h2>
 <p>All required parameters have now been specified and ePiE is able to
 predict the environmental concentrations. The code below runs the ePiE
 model and attaches it to an object called “results”.</p>
-<pre><code class="language-R">    results = ComputeEnvConcentrations(basin_data = basins_avg,
-                                        chem = chem,
-                                        cons = cons,
-                                        verbose = TRUE,
-    cpp = TRUE)
+<pre><code class="language-R">results = ComputeEnvConcentrations(
+  basin_data = basins_avg,
+  chem = chem,
+  cons = cons,
+  verbose = TRUE,
+  cpp = TRUE)
 </code></pre>
 <p>The structure of the data is shown below:</p>
 <pre><code class="language-R">str(results)
@@ -998,11 +1018,11 @@ model and attaches it to an object called “results”.</p>
 </tr>
 <tr>
 <td>C_w</td>
-<td>Predicted concentration in the water</td>
+<td>Predicted concentration in the water [µg/L]</td>
 </tr>
 <tr>
 <td>C_sd</td>
-<td>Predicted concentration in the sediment</td>
+<td>Predicted concentration in the sediment [µg/kg]</td>
 </tr>
 <tr>
 <td>WWTPremoval</td>
@@ -1021,14 +1041,14 @@ model and attaches it to an object called “results”.</p>
 <h2 id="map-results">Map results</h2>
 <p>Visualising the predicted concentrations can be achieved with the code
 below.</p>
-<pre><code class="language-R">    InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
+<pre><code class="language-R">InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
 </code></pre>
 <p>Which produces an interactive map as seen below. Grey colours indicate NA values and blue and red colour indicating low and high PECs.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/screenshots/R_epie/map_PEC.png" data-desc-position="bottom"><img src="../img/screenshots/R_epie/map_PEC.png" alt="img3" style="width: 100%; max-width: 600px; height: 50%;"></a></p>
 <figcaption>Figure X: Dummy caption.</figcaption>
 
 <h2 id="output-statistics">Output statistics</h2>
-<p>Next we want to calculate summary statistics for the predicted concentrations. For this, we are using functionalities provided by the <code>dplyr</code> package. If you do not have <code>dplyr</code> installed, please install it. Alternatively, you can also install the <code>tidyverse</code>, which is a collection of package that are frequently used to analyse and visualise data.</p>
+<p>Next we want to calculate summary statistics for the predicted concentrations. For this, we are using functionalities provided by the <code>dplyr</code> package. If you do not have <code>dplyr</code> installed, please install it. Alternatively, you can also install the <code>tidyverse</code>, which is a collection of packages that are frequently used to analyse and visualise data.</p>
 <pre><code class="language-R">library(dplyr)
 
 PEC_summary_stats &lt;- results$pts %&gt;%
@@ -1044,8 +1064,8 @@ PEC_summary_stats &lt;- results$pts %&gt;%
 </code></pre>
 <h2 id="risk-statistics">Risk statistics</h2>
 <p>To calculate risk quotients (RQs), the respective risk threshold value needs to be added to the data.
-For simplicity, we are using here the default value of 10 ng/L that is also used on the ePiE web application.</p>
-<pre><code class="language-r">results$pts$risk_threshold &lt;- 10
+For simplicity, we are using here the default value of 10 ng/L that is also used on the ePiE web application. As the ePiE <em>R</em> package is using µg/L for its predicted concentration, the value needs to be converted to 10000.</p>
+<pre><code class="language-r">results$pts$risk_threshold &lt;- 10000
 RQ &lt;- results$pts %&gt;% mutate(
   RQ = C_w / risk_threshold
 )
@@ -1188,13 +1208,13 @@ Reduce("+", map_list_rq)@map |&gt;
         
         
           
-          <a href="../interpretation/" class="md-footer__link md-footer__link--next" aria-label="Next: Model Interpretation">
+          <a href="../advanced_R/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced &lt;i&gt;R&lt;/i&gt; Usage">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Model Interpretation
+                Advanced <i>R</i> Usage
               </div>
             </div>
             <div class="md-footer__button md-icon">
