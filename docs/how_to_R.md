@@ -1,16 +1,7 @@
 
 ## Installing *R* and RStudio
 
-*R* is a free, open-source programming language and software environment
-for statistical computing and graphics. While R is mandatory to have
-installed, RStudio is not. However, RStudio provides a user-friendly
-interface for *R*. It makes it easier to write, run, and debug *R* code,
-and it provides tools for visualizing data and managing projects. Please
-follow the steps below to install *R* and RStudio. A more extensive example is provided under the following [link](https://r4np.com/03_setting_up_r_rstudio.html).
-
- This manual is not intended to provide users with a full instructions on how *R* works.
-Nevertheless, it will provide all necessary instructions to run ePiE in
-*R*, assuming limited knowledge of the programming language.
+*R* is a free, open-source programming language and software environment for statistical computing and graphics. In order to run the ePiE package, it is mandatory to have *R* installed. Installation of RStudio is not mandatory. However, RStudio provides a user-friendly interface for *R*. It makes it easier to write, run, and debug *R* code, and it provides tools for visualizing data and managing projects. Please follow the steps below to install *R* and RStudio. This manual is not intended to provide users with a full instructions on how *R* works. Nevertheless, it will provide all necessary instructions to run ePiE in *R*, assuming limited knowledge of the programming language.
 
 **Step 1: Install *R***
 
@@ -41,8 +32,8 @@ When opening RStudio you should see a similar window as the one below.
 RStudio is divided into four main panels:
 
 - **Source** (top-left, 1): Write and save your R scripts here
-- **Console** (bottom-left, 2): Executes R code and displays output; commands can be typed directly or run from the Source panel
-- **Environment** (top-right, 3): Lists all objects currently loaded in memory (data frames, variables, functions)
+- **Environment** (top-right, 2): Lists all objects currently loaded in memory (data frames, variables, functions)
+- **Console** (bottom-left, 3): Executes R code and displays output; commands can be typed directly or run from the Source panel
 - **Files / Plots / Help** (bottom-right, 4): Browse files, view plots, active packages, and access R documentation
 
 It is ***strongly*** recommended to work inside an **RRoject**. The advantage of working within an RProjects is that the working directory is automatically set to the project folder, making all file paths relative and reproducible across different machines. Furthermore, all related raw data and generated data can be stored inside the project folder. For more information, please refer to the following references:
@@ -59,7 +50,7 @@ Moreover, below is a short list of some useful and frequently used shortcuts:
 | Assignment operator  | `Alt + -` | `Option + -` | 
 | Pipe operator `%>%` | `Ctrl + Shift + M` | `Cmd + Shift + M` |
 | Comment / uncomment lines | `Ctrl + Shift + C` | `Cmd + Shift + C` |
-| Find and replace | `Ctrl + H` | `Cmd + H` |
+| Find and replace | `Ctrl + F` | `Cmd + H???` |
 | Knit / render document | `Ctrl + Shift + K` | `Cmd + Shift + K` |
 
 Note: By default Ctrl/Cmd + Shift + M inserts the `magrittr` pipe `%>%`. To use the new, native *R* pipe `|>` instead, go to the navigation bar of RStudio at the top under *Tools* → *Global Options* → *Code* and check *Use native pipe operator*.
@@ -72,7 +63,7 @@ Before running the ePiE model, you need to install some additional
 packages. These packages provide extra functionality for handling data,
 maps, and calculations. In the console panel, copy and paste the
 following code, then press Enter. The code will check if the required
-packages are installed. If not, it install them automatically.
+packages are installed. If not, the packages will be installed automatically.
 
 ```R
  # Install dependencies 
@@ -150,7 +141,7 @@ str(chem)
 #  $ custom_wwtp_microfilter_removal: num 0
 ```
 
-To load in data for a different desired API, a custom data file in any *R* readable format can be used (e.g., .csv, .xlsx). The template on the ePiE webapp can be used for this purpose; it is also included below as an .xlsx or .csv file.[^10]
+To load in data for a different desired API, a custom data file in any *R* readable format can be used (e.g., .csv, .xlsx). The template of the ePiE webapp can be used for this purpose; it is also included below as an .xlsx or .csv file.[^10]
 
 [^10]: To do: Include template file as .xlsx and .csv 
 
@@ -238,7 +229,7 @@ We need to ensure that the consumption data is available for the
 selected basins. This can be achieved with the following code
 
 ```R
-    cons = CheckConsumptionData(basins$pts, chem, cons)
+cons = CheckConsumptionData(basins$pts, chem, cons)
 ```
 
 ## Run ePiE
@@ -248,11 +239,12 @@ predict the environmental concentrations. The code below runs the ePiE
 model and attaches it to an object called “results”.
 
 ```R
-    results = ComputeEnvConcentrations(basin_data = basins_avg,
-                                        chem = chem,
-                                        cons = cons,
-                                        verbose = TRUE,
-    cpp = TRUE)
+results = ComputeEnvConcentrations(
+  basin_data = basins_avg,
+  chem = chem,
+  cons = cons,
+  verbose = TRUE,
+  cpp = TRUE)
 ```
 
 The structure of the data is shown below:
@@ -297,8 +289,8 @@ We can see in the output the `results` object is a list, containing two data fra
 | x| X-coordinates of an individual node |
 | y| Y-coordinates of an individual node |
 | Q| Water flow <mark>[m3 s‐1] |
-| C_w| Predicted concentration in the water |
-| C_sd| Predicted concentration in the sediment |
+| C_w| Predicted concentration in the water [µg/L]|
+| C_sd| Predicted concentration in the sediment [µg/kg]|
 | WWTPremoval| (Predicted) removal in the WWTP |
 | API| The current API |
 | basin_id| Basin ID of the current selected basin |
@@ -310,7 +302,7 @@ Visualising the predicted concentrations can be achieved with the code
 below.
 
 ```R
-    InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
+InteractiveResultMap(results, basin_id = basin_ids[2], cex = 4) # Ouse
 ```
 
 Which produces an interactive map as seen below. Grey colours indicate NA values and blue and red colour indicating low and high PECs.
@@ -320,7 +312,7 @@ Which produces an interactive map as seen below. Grey colours indicate NA values
 
 ## Output statistics
 
-Next we want to calculate summary statistics for the predicted concentrations. For this, we are using functionalities provided by the `dplyr` package. If you do not have `dplyr` installed, please install it. Alternatively, you can also install the `tidyverse`, which is a collection of package that are frequently used to analyse and visualise data.
+Next we want to calculate summary statistics for the predicted concentrations. For this, we are using functionalities provided by the `dplyr` package. If you do not have `dplyr` installed, please install it. Alternatively, you can also install the `tidyverse`, which is a collection of packages that are frequently used to analyse and visualise data.
 
 ```R
 library(dplyr)
@@ -340,10 +332,10 @@ PEC_summary_stats <- results$pts %>%
 ## Risk statistics
 
 To calculate risk quotients (RQs), the respective risk threshold value needs to be added to the data.
-For simplicity, we are using here the default value of 10 ng/L that is also used on the ePiE web application.
+For simplicity, we are using here the default value of 10 ng/L that is also used on the ePiE web application. As the ePiE *R* package is using µg/L for its predicted concentration, the value needs to be converted to 10000.
 
 ```r
-results$pts$risk_threshold <- 10
+results$pts$risk_threshold <- 10000
 RQ <- results$pts %>% mutate(
   RQ = C_w / risk_threshold
 )

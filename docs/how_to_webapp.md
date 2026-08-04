@@ -41,15 +41,15 @@ By default, the data for ibuprofen are included in the web application, which se
 - pKa = Acid dissociation coefficient [unitless]
 - f_uf = Fraction of dose excreted unchanged via urine and faeces, including conjugate metabolites (glucuronides and sulphates) [unitless]
 
-Not mandatory to fill in, but still essential for ePiE, is the k_bio_wwtp column, which indicates the first order biodegradation rate constant for secondary WWTP treatment. The SimpleTreat model uses it to model the removal inside the WWTP. In case this parameter is unknown it can be set to 0. However, this factor is one of the most important and sensitive parameters in the model!
+Not mandatory to fill in, but still essential for ePiE, is the k_bio_wwtp column, which indicates the first order biodegradation rate constant for secondary WWTP treatment. The SimpleTreat model uses it to model the removal inside the WWTP. In case this parameter is unknown, it can be set to 0. However, this factor is one of the most important and sensitive parameters in the model!
 
-Table 2 (2) contains supplementary physico-chemical parameters for both the neutral and alternative form of the API. While these properties are not mandatory to run the ePiE model, they refine the model outputs based on the ionisation state of the API. 
+Table 2 (2) contains supplementary physico-chemical parameters for both the neutral and alternative form of the API. While these properties are not mandatory to run the ePiE model, they refine the model outputs based on the ionisation state of the API.  If no parameter values for the alternative form are specified by the user, <mark>ePiE will assume these based on the Log K<sub>OW</sub> and pK<sub>A</sub>.</mark>
 
-As mentioned above, the excel template contains overall 41 variables that are used in the modelling process. While not all of these can be adjusted within the ePiE App, they can be adjusted in the excel file. For example, the default temperature for surface waters for the neutral form (T_hydro_sw_n) of 293.15 K (20 °C) could be adjusted to reflect measured temperature data in a specific basin.
+As mentioned above, the excel template contains overall 41 variables that are used in the modelling process. While not all of these can be adjusted within the ePiE App, they can be adjusted in the excel file. For example, the default temperature for surface waters for the neutral form (T_hydro_sw_n) of 293.15 K (20 °C) can be adjusted to reflect measured temperature data in a specific basin.
 
 ## WWTP removal
 
-On this page, the removal inside the WWTP is modelled. Table 3 contains the API and estimates the removal during primary and secondary treatment (1). The table is by default empty but relevant values must be entered here. After clicking  “Run Simple Treat 4.0” under Table 3 (2), SimpleTreat will estimate the removed fractions, based on the previously provided first order biodegradation rate constant (k_bio_wwtp), and automatically fills the table. If desired, the values predicted by SimpleTreat can be overwritten and for example, replaced by predicted values from other QSARs or from experimental data. Afterwards, click on river basin.  
+On this page, the removal inside the WWTP is modelled. Table 3 contains the API and estimates the removal after primary and secondary treatment (1). The table is by default empty. After clicking  “Run Simple Treat 4.0” under Table 3 (2), SimpleTreat will estimate the removed fractions, based on the previously provided first order biodegradation rate constant (k_bio_wwtp), and automatically fills the table. If desired, the values predicted by SimpleTreat can be overwritten and for example, replaced by predicted values from QSARs or from experimental data. Afterwards, click on river basin.  
 
 <img src="../img/screenshots/ePiE/screens_4.png" alt="img4" style="width: 100%; max-width: 600px; height: 50%;" />
 <img src="../img/screenshots/ePiE/screens_5.png" alt="img5" style="width: 100%; max-width: 600px; height: 50%;" />
@@ -62,7 +62,7 @@ On the river basin tab, a map of Europe will appear (1). One or multiple river b
 <img src="../img/screenshots/ePiE/screens_6.png" alt="img6" style="width: 100%; max-width: 600px; height: 50%;" />
 <figcaption>Figure X: Dummy caption.</figcaption>
 
-As ePiE estimates concentrations based on consumption data, these data need to be entered for each country that the river crosses or borders. For example, estimating the concentrations in the Danube river basin would require the consumption data for 12 countries. For illustrative purposes, we will continue our example with the Ouse river basin (2), which only requires consumption data for the United Kingdom. This river basin has been thoroughly validated previously by [Oldenkamp et al. (2018)](https://pubs.acs.org/doi/10.1021/acs.est.8b03862).
+As ePiE estimates concentrations based on consumption data, these data need to be entered for each country that the river crosses or borders. For example, estimating the concentrations in the Danube river basin would require consumption data for 12 countries. For illustrative purposes, we will continue our example with the Ouse river basin (2), which only requires consumption data for the United Kingdom. This river basin has been thoroughly validated previously by [Oldenkamp et al. (2018)](https://pubs.acs.org/doi/10.1021/acs.est.8b03862).
 
 At the bottom of the page, the specific flow conditions can be chosen which are by default set to average yearly flow conditions. It is also possible to select minimum or maximum flow conditions. Keep the default options and after having selected the Ouse river basin, click on the tab “Consumption data”.
 
@@ -88,7 +88,7 @@ At the top of the page, you will see two buttons: “Save current settings” an
 <img src="../img/screenshots/ePiE/screens_10.png" alt="img10" style="width: 100%; max-width: 600px; height: 50%;" />
 <figcaption>Figure X: Dummy caption.</figcaption>
 
-Clicking on the button “Run ePiE” will run the model (3). Model progress can be seen in the grey box below the button (1). Once ePiE finalised its run, the message “ePiE run completed.” will appear at the bottom and a blue rectangular bar will appear (2). Next, click “Map results”.
+Clicking on the button “Run ePiE” will run the model (3). Model progress can be followed in the grey box below the button (1). Once ePiE finalised its run, the message “ePiE run completed.” will appear at the bottom and a blue rectangular bar will appear (2). Next, click “Map results”.
 
 <img src="../img/screenshots/ePiE/screens_11.png" alt="img11" style="width: 100%; max-width: 600px; height: 50%;" />
 <figcaption>Figure X: Dummy caption.</figcaption>

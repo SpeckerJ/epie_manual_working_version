@@ -6,26 +6,28 @@
       
       
       
+        <link rel="prev" href="../how_to_R/">
       
-        <link rel="next" href="purp_scope_manual/">
+      
+        <link rel="next" href="../interpretation/">
       
       
         
       
       
-      <link rel="icon" href="img/logo/epie_manual_logo_V4.ico">
+      <link rel="icon" href="../img/logo/epie_manual_logo_V4.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>ePiE Manual</title>
+        <title>Advanced R Usage - ePiE Manual</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -44,15 +46,15 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -78,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#advanced-r-usage" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -90,9 +97,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
+    <a href=".." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="img/logo/PREMIER_Logo.ico" alt="logo">
+  <img src="../img/logo/PREMIER_Logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Advanced <i>R</i> Usage
             
           </span>
         </div>
@@ -147,9 +154,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
+    <a href=".." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="img/logo/PREMIER_Logo.ico" alt="logo">
+  <img src="../img/logo/PREMIER_Logo.ico" alt="logo">
 
     </a>
     ePiE Manual
@@ -161,17 +168,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -187,7 +187,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -199,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="purp_scope_manual/" class="md-nav__link">
+      <a href="../purp_scope_manual/" class="md-nav__link">
         
   
   
@@ -226,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="b_information/" class="md-nav__link">
+      <a href="../b_information/" class="md-nav__link">
         
   
   
@@ -253,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how_to_webapp/" class="md-nav__link">
+      <a href="../how_to_webapp/" class="md-nav__link">
         
   
   
@@ -280,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how_to_R/" class="md-nav__link">
+      <a href="../how_to_R/" class="md-nav__link">
         
   
   
@@ -304,10 +303,35 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="advanced_R/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced <i>R</i> Usage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -323,6 +347,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#advanced-r-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced R usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -334,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interpretation/" class="md-nav__link">
+      <a href="../interpretation/" class="md-nav__link">
         
   
   
@@ -361,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="glossary/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -399,6 +452,25 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#advanced-r-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced R usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -414,10 +486,10 @@
 
 
 
-  <h1>Home</h1>
+  <h1>Advanced <i>R</i> Usage</h1>
 
-<p>⚠️ This webpage is currently under active construction ⚠️</p>
-<p>For further details, updates, or questions, please reach out to Jan Specker (jan.specker@ru.nl) or Selwyn Hoeks (selwyn.hoeks@ru.nl).</p>
+<h2 id="advanced-r-usage">Advanced R usage</h2>
+<p>This section shows some </p>
 
 
 
@@ -446,15 +518,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
+          
+          <a href="../how_to_R/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to: The ePiE &lt;i&gt;R&lt;/i&gt; package">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                How to: The ePiE <i>R</i> package
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="purp_scope_manual/" class="md-footer__link md-footer__link--next" aria-label="Next: Manual Purpose">
+          <a href="../interpretation/" class="md-footer__link md-footer__link--next" aria-label="Next: Model Interpretation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Manual Purpose
+                Model Interpretation
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -495,10 +583,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.footer", "content.footnote.tooltips", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "content.footnote.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

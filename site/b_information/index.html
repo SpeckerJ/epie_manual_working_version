@@ -15,7 +15,7 @@
         
       
       
-      <link rel="icon" href="../../img/logo/epie_manual_logo_V4.ico">
+      <link rel="icon" href="../img/logo/epie_manual_logo_V4.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -99,7 +99,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="ePiE Manual" class="md-header__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
+  <img src="../img/logo/PREMIER_Logo.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -156,7 +156,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="ePiE Manual" class="md-nav__button md-logo" aria-label="ePiE Manual" data-md-component="logo">
       
-  <img src="../../img/logo/Premier_Logo.ico" alt="logo">
+  <img src="../img/logo/PREMIER_Logo.ico" alt="logo">
 
     </a>
     ePiE Manual
@@ -386,6 +386,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../advanced_R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced <i>R</i> Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../interpretation/" class="md-nav__link">
         
   
@@ -511,18 +538,18 @@
 
 <h1 id="theoretical-background">Theoretical Background</h1>
 <h2 id="the-epie-model">The ePiE model</h2>
-<p>The first version of the ePiE model was developed in 2018 by Oldenkamp et al. (2018) (<mark><strong>CITATION</strong></mark>) as part of the IMI's iPiE (Innovative Medicines Initiative; Intelligence-led Assessment of Pharmaceuticals in the Environment) project and was subsequently further developed as part of the PREMIER (Prioritisation and Risk Evaluation
-of Medicines in the EnviRonment) project.</p>
-<p>The ePiE model predicts concentration of APIs for human use in European rivers and waters based on consumption data of APIs, and API and environmental characteristics. It provides a broad-scale, steady-state assessment of PECs in European river basins and combines the need for a spatial explicit model, computational efficiency, and potential limited API data availability. </p>
-<p>Schematically, this is shown in the figure below. ePiE uses as its basis a specific API's consumption and its human metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs are based on the European Environmental Agency on the urban wastewater treatment directive (UWWTD) Waterbase database<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, which is limited to WWTP connected to at least 2000 population equivalents.</p>
+<p>The first version of the ePiE model was developed in 2018 by Oldenkamp et al. (2018) (<mark><strong>CITATION</strong></mark>) as part of the IMI's i-PiE (Innovative Medicines Initiative; Intelligence-led Assessment of Pharmaceuticals in the Environment) project and was subsequently further developed as part of the PREMIER (Prioritisation and Risk Evaluation
+of Medicines in the EnviRonment) project (<a href="https://imi-premier.eu/">https://imi-premier.eu/</a>).</p>
+<p>The ePiE model predicts concentrations of APIs for human use in European rivers and waters based on consumption data of APIs, and API and environmental characteristics. It provides a broad-scale, steady-state assessment of PECs in European river basins and combines the need for a spatially explicit model, computational efficiency, and potential limited API data availability. </p>
+<p>Schematically, this is shown in the figure below. ePiE uses data on API consumption, metabolism and excretion to calculate the overall excreted fraction per capita. In combination with the number of inhabitants connected to the sewage system, the overall fraction emitted to wastewater treatment plants (WWTPs) is calculated. Information on specific WWTPs originates from the Waterbase database<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>which has been compiled within the context of the European Urban Wastewater Treatment Directive (UWWTD) and is managed by the European Environmental Agency (EEA). This database is limited to WWTPs with a capacity of at least 2000 population equivalents (PEs).</p>
 <p><br>
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/overview_epie2.png" data-desc-position="bottom"><img src="../img/overview_epie2.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: auto;"></a></p>
 <figcaption>Figure X: Dummy caption.</figcaption>
 <p><br></p>
-<p>The API's removal inside the WWTP is based on the API's physico-chemical properties and is modelled according to SimpleTreat 4.0 (<mark><strong>Struijs 2014</strong></mark>). Afterwards, the emitted API fraction from WWTPs into the aquatic environment is tracked along its river network. This can further be predicted for different hydrological scenarios assuming high, low flow events as well as average river flows across 1609 river basins for 31 European countries with a resolution of 1 km. River flows are based on long-term-yearly averages from 2000 – 2015. Furthermore, the predicted concentrations are compounded by environmental processes such as dilution, bio- and photodegradation, sedimentation, and hydrolysis. </p>
-<p>Based on intensive validation, ePiE was found to provide an accuracy between measured environmental concentrations (MECs) and PECs of approximately a factor of 10, with factors of 2 for river basins with reliable API consumption and monitoring data. Nevertheless, the model has specific inherent limitations. For example, ePiE was not developed to account for veterinary medicines and it does not cover drinking water sources or groundwater. Moreover, the model is constrained in terms of its precision of its modelling results with regards to temporal and spatial resolution within a river. As a result, predictions cannot be made for a specific date or time point. Furthermore, predictions are not possible for rivers without upstream WWTPs. Moreover, all WWTPs are assumed to perform generally the same and individual WWTP characteristics, except its size, cannot be accounted for. Consequently, this means that all WWTPs across Europe are modelled to have the same API removal rate and that the model is not intended to be used to simulate the effects of upgrading a specific WWTP. For further details on these constraints, please refer to the section on limitations later in the document.</p>
+<p>The removal of APIs inside the WWTP is based on the API's physico-chemical properties and is modelled according to SimpleTreat 4.0 (<mark><strong>Struijs 2014</strong></mark>). The API fraction emitted from WWTPs into the aquatic environment is tracked along its river network. API concentrations in surface waters can be predicted for different hydrological scenarios assuming low, average and high river flow across 1609 river basins for 31 European countries with a resolution of 1x1 km. River flow is based on long-term-yearly averages from 2000 – 2015. Furthermore, the predicted concentrations are compounded by environmental processes such as dilution, bio- and photodegradation, sedimentation, and hydrolysis. </p>
+<p>ePiE predictions have been compared with measured environmental concentrations (MECs; <mark>Oldenkamp et al. (2018), Hoeks et al. (Under review)</mark>). Typical differences are less than a factor of 10, and around a factor of 2 for river basins with reliable API consumption and monitoring data. Nevertheless, the model has inherent limitations. For example, ePiE was not developed to account for veterinary medicines and it does not cover drinking water sources or groundwater. The model has a limited temporal resolution. As a result, predictions cannot be made for a specific date or point in time. Furthermore, predictions are not possible for rivers without upstream WWTPs. Individual WWTP characteristics, except size, are not accounted for. This means that all WWTPs across Europe have the same API removal rate and that the impact of upgrading a specific WWTP cannot be simulated. Further details are provided in the section on limitations later in the document.</p>
 <h2 id="pathways-from-human-pharmaceutical-usage-to-surface-water">Pathways from human pharmaceutical usage to surface water</h2>
-<p>APIs can enter the environment via multiple direct and indirect entry routes (see Figure below). Direct entry routes stem from human excretion after their administration. After consumption, APIs are metabolised in the human body, but fractions are also excreted unchanged or as active metabolites via urine and faeces. These end up in the sewer system and travel through the sewage system towards WWTPs. While conventional WWTPs are effective at removing many pollutants from the wastewater, they were not specifically designed to remove anthropogenic chemicals such as pharmaceuticals. Inside the WWTP numerous processes govern the degradation and removal of chemicals. Some are partially degraded through biological processes or removed through sorption to sludge, while others persist and pass through treatment largely unchanged. Consequently, treated wastewater effluent still contains measurable concentrations of APIs, ultimately ending up in receiving surface waters. </p>
+<p>APIs can enter the environment via multiple routes (Figure <mark>X</mark>). The human consumption of pharmaceuticals typically is the dominant source. After consumption, APIs are metabolised in the human body, but residues are excreted unchanged or as active metabolites via urine and faeces. These residues end up in the sewer system and travel through the sewage system towards WWTPs. While conventional WWTPs are effective at removing many pollutants from the wastewater, they were not specifically designed to remove anthropogenic micropollutants such as pharmaceutical residues. Inside the WWTP, numerous processes govern the degradation and removal of chemicals. Some are partially degraded through biological processes or removed through sorption to sludge, while others persist and pass through treatment largely unchanged. Consequently, treated wastewater effluent still contains measurable concentrations of APIs, ultimately ending up in receiving surface waters. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/draft_overview_API_entry_20260415.png" data-desc-position="bottom"><img src="../img/draft_overview_API_entry_20260415.png" alt="Draft Flowchart" style="width: 100%; max-width: 600px; height: 50%;"></a></p>
 <figcaption>Figure X: Dummy caption.</figcaption>
 <p><br></p>

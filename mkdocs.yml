@@ -6,6 +6,7 @@ nav:
   - Theoretical Background: b_information.md
   - 'How to: The ePiE App': how_to_webapp.md
   - 'How to: The ePiE <i>R</i> package': how_to_R.md
+  - 'Advanced <i>R</i> Usage': advanced_R.md
   - Model Interpretation: interpretation.md
   - Glossary: glossary.md
   
